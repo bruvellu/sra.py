@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 '''Search & Fetch records from NCBI's Sequence Read Archive.
 
-Example:
+Use http://www.ncbi.nlm.nih.gov/sra/advanced to build a query and the script
+will output a CSV file with the results. Example:
 
-./fetch_sra.py -s 'agalma[Organism]' -m 3 -o sra_output.csv -e your@email.com
+./sra.py -s 'agalma[Organism]' -m 3 -o sra_output -e your@email.com
 
-Right now filtering needs to be done on a separate script. Either importing the
-unfiltered CSV file elsewhere or importing this program as a module and
-hard-coding the filter booleans. An example of how to filter is below the CSV
-writing line in the main() function.
+A more fine grained filtering based on the read length, library layout, number
+of spots, platform, etc... needs to be done on a separate script importing this
+program as a module. Check fetch_sra.py for an example on how to filter.
 '''
 
 import argparse
