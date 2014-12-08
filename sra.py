@@ -332,11 +332,6 @@ def main():
     # Store packages in data frame for filtering.
     packages_to_filter = FilterPackages(packages)
 
-    # Example of filter booleans using Pandas data frame.
-    # Only get rows whose 'library_layout' column equals 'PAIRED', 'nreads' is
-    # greater than 1, and 'read_average' is greater or equal than 70.
-    #filtered_df = df[df.library_layout == 'PAIRED'][df.nreads > 1][df.read_average >= 70]
-
     # Write CSV out.
     packages_to_filter.write_csv(args.output)
 
