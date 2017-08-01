@@ -229,7 +229,11 @@ class SRAPackage:
         self.instrument_model = fields['instrument_model']
         self.taxon_id = int(fields['taxon_id'])
         self.scientific_name = fields['scientific_name']
-        self.nreads = int(fields['nreads'])
+        # Catch nreads="variable". See https://github.com/nelas/sra.py/issues/1
+        try:
+            self.nreads = int(fields['nreads'])
+        except:
+            self.nreads = 1
         self.read_average = int(float(fields['read_average']))
         self.run_accession = fields['run_accession']
         if self.run_accession:
